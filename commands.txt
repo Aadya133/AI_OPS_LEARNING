@@ -1,0 +1,31 @@
+Commands 
+
+sudo apt update
+sudo apt install -y curl
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+source "/home/aditi/.local/bin/env"  # to use uv commands
+mkdir -p ~/airflow-class/dags
+cd airflow-class/
+uv venv --python 3.12
+source .venv/bin/activate
+
+pip install apache-airflow[celery]==3.1.0 --constraint https://raw.githubusercontent.com/apache/airflow/constraints-3.1.0/constraints-3.12.txt
+
+nano ~/airflow-class/dags/my_first_aiops_dag.py # filename
+ctrl+O -> enter -> ctrl+x
+export AIRFLOW_HOME=~/airflow-class
+airflow standalone
+ 
+new terminal
+
+cd airflow-class
+source .venv/bin/activate
+uv pip install graphviz # if not install
+export AIRFLOW_HOME=~/airflow-class
+airflow db migrate
+airflow dags list | grep my_first_aiops_dag.py #filename
+
+airflow dags unpause my_first_aiops_dag #dagid
+
+airflow dags trigger my_first_aiops_dag # dagid
