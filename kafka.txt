@@ -1,0 +1,43 @@
+cd ~/kafka_2.13-4.0.0
+KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
+bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/server.properties
+bin/kafka-server-start.sh config/server.properties
+
+open Terminal 2.
+
+cd ~/kafka_2.13-4.0.0
+
+You can create the topic using the command:
+
+bin/kafka-topics.sh --create \
+  --topic server_metrics \
+  --bootstrap-server localhost:9092
+
+Check:
+
+bin/kafka-topics.sh --list \
+  --bootstrap-server localhost:9092
+
+You should see:
+
+server_metrics
+
+Open Terminal 3.
+
+From your repo:
+
+cd /workspaces/AIOPS
+
+Run:
+
+python Q3/consumer.py
+
+You should see:
+
+Waiting for messages...
+
+It will appear to be doing nothing.
+
+That's normal.
+
+It is waiting for Kafka messages.
