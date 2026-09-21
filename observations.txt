@@ -1,0 +1,61 @@
+# AIOps Practical Assessment
+
+## 1. Workflow
+
+Operational Data
+→ Anomaly Detection
+→ Event Generation
+→ Producer
+→ Topic
+→ Consumer
+→ Final AIOps Processing
+
+## 2. Observations
+
+The operational data contains CPU, memory and response-time information.
+
+The anomaly detection component identifies unusual metric values based on the configured threshold.
+
+## 3. Issue Found
+
+The affected component was:
+[component name]
+
+The observed issue was:
+[describe actual issue]
+
+## 4. Root Cause
+
+The issue was caused by:
+[actual cause]
+
+## 5. Correction
+
+I corrected:
+[actual correction]
+
+No unnecessary changes were made to the existing architecture.
+
+## 6. Validation
+
+I ran:
+[actual test/run command]
+
+Result:
+[actual result]
+
+## 7. End-to-End Result
+
+The corrected workflow successfully processed operational data, detected the anomaly, generated the event, passed the event through the producer/topic/consumer flow, and generated the final AIOps output.
+
+## 8. Reproduction Steps
+
+1. Open the repository in GitHub Codespaces.
+2. Install required Python dependencies.
+3. Run the provided validation/tests.
+4. Run the AIOps workflow.
+5. Verify the final output.
+
+## 9. Git
+
+Changes were committed and pushed to the assessment repository.
